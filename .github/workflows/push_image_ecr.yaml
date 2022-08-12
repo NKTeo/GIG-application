@@ -31,4 +31,4 @@ jobs:
       
       - name: Deploy new image to ECS
         run: |
-          aws ecs update-service --cluster application_cluster --service application_service --force-new-deployment
+          aws ecs update-service --cluster application-cluster --service application-service --force-new-deployment
