@@ -28,3 +28,7 @@ jobs:
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:latest .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+      
+      - name: Deploy new image to ECS
+        run: |
+          aws ecs update-service --cluster application_cluster --service application_service --force-new-deployment
